@@ -48,6 +48,7 @@ h2 span{color:var(--red)}
 .empty{padding:25px;background:#151515;color:#aaa;border-radius:8px}
 .pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin:25px 0;flex-wrap:wrap}
 footer{text-align:center;border-top:1px solid #292929;padding:28px;color:#777}
+button:disabled{opacity:.4;cursor:not-allowed}
 @media(max-width:600px){
  header{justify-content:center}
  nav{justify-content:center}
@@ -72,8 +73,7 @@ footer{text-align:center;border-top:1px solid #292929;padding:28px;color:#777}
  <p>Toutes les réponses, au même endroit.</p>
  <p><strong id="totalGuides">1 000 guides disponibles</strong></p>
  <div class="search">
-  <input id="searchInput" placeholder="Rechercher parmi les 1 000 guides..."
-   onkeydown="if(event.key==='Enter')search()">
+  <input id="searchInput" placeholder="Rechercher parmi les 1 000 guides..." onkeydown="if(event.key==='Enter')search()">
   <button class="primary" onclick="search()">Rechercher</button>
  </div>
 </section>
@@ -102,7 +102,7 @@ const categories=[
 ];
 
 /* =========================================
-   2. SUJETS DES 1 000 GUIDES
+   2. SUJETS DES GUIDES
 ========================================= */
 
 const topics={
@@ -170,17 +170,17 @@ const topics={
 };
 
 /* =========================================
-   3. TITRES DES GUIDES
-   Titres plus naturels et faciles à comprendre.
+   3. FORMATS DE TITRES
+   Les titres ne contiennent aucun deux-points.
 ========================================= */
 
 const titleTemplates=[
- subject=>"Comprendre le sujet « "+subject+" »",
- subject=>"Faire les bons choix concernant « "+subject+" »",
- subject=>"Bien utiliser ou appliquer « "+subject+" »",
- subject=>"Éviter les erreurs courantes liées à « "+subject+" »",
- subject=>"Améliorer ses pratiques autour de « "+subject+" »",
- subject=>"Trouver des solutions aux problèmes liés à « "+subject+" »"
+ subject=>"Les bases à connaître sur le sujet «"+subject+"»",
+ subject=>"Les points essentiels pour comprendre «"+subject+"»",
+ subject=>"Les bonnes pratiques concernant «"+subject+"»",
+ subject=>"Les erreurs à éviter avec le sujet «"+subject+"»",
+ subject=>"Comment approfondir ses connaissances sur «"+subject+"»",
+ subject=>"Les problèmes fréquents liés au sujet «"+subject+"»"
 ];
 
 /* =========================================
@@ -216,7 +216,7 @@ const sources={
 };
 
 /* =========================================
-   5. GÉNÉRATION DES 1 000 GUIDES
+   5. DESCRIPTIONS ET CONSEILS
 ========================================= */
 
 const descriptions={
@@ -237,14 +237,20 @@ const conseils={
 "Technologie":"Compare plusieurs solutions, vérifie les caractéristiques techniques et consulte les recommandations des fabricants."
 };
 
+/* =========================================
+   6. CRÉATION DES 1 000 GUIDES
+========================================= */
+
 let guides=[];
 let idCounter=1;
 
 for(const category of categories){
+
  const name=category.name;
  const subjects=topics[name];
 
  for(let i=0;i<167;i++){
+
   const subject=subjects[i%subjects.length];
   const templateIndex=Math.floor(i/subjects.length)%titleTemplates.length;
 
@@ -255,15 +261,18 @@ for(const category of categories){
    category:name,
    title:title,
    intro:descriptions[name],
+
    details:
     "Le sujet de ce guide est : "+subject+". "+
     descriptions[name]+" "+
     "Pour bien comprendre ce domaine, il est utile d'identifier les éléments principaux, leur rôle, leurs limites et les situations dans lesquelles ils sont utilisés. "+
     "Les caractéristiques peuvent varier selon les modèles, les fabricants et les conditions d'utilisation. "+
     "Prends le temps de comparer les informations et de vérifier les recommandations adaptées à ta situation.",
+
    advice:
     conseils[name]+" "+
     "Note les informations importantes, vérifie les résultats et privilégie toujours les sources fiables.",
+
    sources:sources[name]
   };
 
@@ -271,13 +280,12 @@ for(const category of categories){
  }
 }
 
-/* 6 catégories × 167 = 1 002.
-   On conserve exactement 1 000 guides. */
+/* 1 000 guides au total */
 
 guides=guides.slice(0,1000);
 
 /* =========================================
-   6. NAVIGATION ET FAVORIS
+   7. NAVIGATION ET FAVORIS
 ========================================= */
 
 let currentView="home";
@@ -372,7 +380,7 @@ function changePage(page){
 }
 
 /* =========================================
-   7. ACCUEIL
+   8. ACCUEIL
 ========================================= */
 
 function home(){
@@ -406,7 +414,7 @@ function home(){
 }
 
 /* =========================================
-   8. CATÉGORIES
+   9. CATÉGORIES
 ========================================= */
 
 function categoriesPage(){
@@ -451,7 +459,7 @@ function openCategory(name,page=1){
 }
 
 /* =========================================
-   9. AFFICHAGE D'UN GUIDE
+   10. AFFICHAGE D'UN GUIDE
 ========================================= */
 
 function openGuide(id){
@@ -519,7 +527,7 @@ function goBack(){
 }
 
 /* =========================================
-   10. FAVORIS
+   11. FAVORIS
 ========================================= */
 
 function favoritesPage(page=1){
@@ -543,7 +551,7 @@ function favoritesPage(page=1){
 }
 
 /* =========================================
-   11. RECHERCHE
+   12. RECHERCHE
 ========================================= */
 
 function search(query,page=1){
@@ -583,7 +591,7 @@ function search(query,page=1){
 }
 
 /* =========================================
-   12. DÉMARRAGE
+   13. DÉMARRAGE
 ========================================= */
 
 document.getElementById("totalGuides").textContent=
