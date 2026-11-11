@@ -103,7 +103,6 @@ const categories=[
 
 /* =========================================
    2. SUJETS DES 1 000 GUIDES
-   28 sujets par catégorie.
 ========================================= */
 
 const topics={
@@ -171,16 +170,17 @@ const topics={
 };
 
 /* =========================================
-   3. ANGLES DE CHAQUE GUIDE
+   3. TITRES DES GUIDES
+   Titres plus naturels et faciles à comprendre.
 ========================================= */
 
-const angles=[
-"Comprendre les bases",
-"Bien choisir",
-"Utiliser correctement",
-"Éviter les erreurs courantes",
-"Entretenir et améliorer",
-"Résoudre les problèmes"
+const titleTemplates=[
+ subject=>"Comprendre le sujet « "+subject+" »",
+ subject=>"Faire les bons choix concernant « "+subject+" »",
+ subject=>"Bien utiliser ou appliquer « "+subject+" »",
+ subject=>"Éviter les erreurs courantes liées à « "+subject+" »",
+ subject=>"Améliorer ses pratiques autour de « "+subject+" »",
+ subject=>"Trouver des solutions aux problèmes liés à « "+subject+" »"
 ];
 
 /* =========================================
@@ -246,9 +246,9 @@ for(const category of categories){
 
  for(let i=0;i<167;i++){
   const subject=subjects[i%subjects.length];
-  const angle=angles[Math.floor(i/subjects.length)%angles.length];
+  const templateIndex=Math.floor(i/subjects.length)%titleTemplates.length;
 
-  const title=subject+" : "+angle.toLowerCase();
+  const title=titleTemplates[templateIndex](subject);
 
   const guide={
    id:idCounter++,
