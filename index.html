@@ -7,97 +7,47 @@
 
 <style>
 *{box-sizing:border-box}
-:root{
- --red:#ff2424;
- --bg:#080808;
- --panel:#151515;
- --border:#303030;
-}
-body{
- margin:0;background:var(--bg);color:#f5f5f5;
- font-family:Arial,sans-serif;
-}
-header{
- position:sticky;top:0;z-index:5;background:#090909;
- border-bottom:1px solid #292929;padding:17px 6%;
- display:flex;justify-content:space-between;align-items:center;
- flex-wrap:wrap;gap:15px;
-}
-.logo{
- font-size:30px;font-weight:900;letter-spacing:4px;
- color:var(--red);cursor:pointer;text-shadow:0 0 15px #ff242466;
-}
+:root{--red:#ff2424;--bg:#080808;--panel:#151515;--border:#303030}
+body{margin:0;background:var(--bg);color:#f5f5f5;font-family:Arial,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#090909;border-bottom:1px solid #292929;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:30px;font-weight:900;letter-spacing:4px;color:var(--red);cursor:pointer;text-shadow:0 0 15px #ff242466}
 nav{display:flex;gap:18px;flex-wrap:wrap}
 nav button{background:none;border:0;color:#ddd;cursor:pointer;font-size:14px}
 nav button:hover{color:var(--red)}
-.hero{
- text-align:center;padding:65px 20px;
- background:radial-gradient(ellipse at top,#420909,#080808 70%);
-}
+.hero{text-align:center;padding:65px 20px;background:radial-gradient(ellipse at top,#420909,#080808 70%)}
 .hero h1{font-size:clamp(38px,7vw,65px);margin:0}
 .hero h1 span{color:var(--red)}
 .hero p{color:#bbb}
-.search{
- max-width:650px;margin:28px auto 0;
- display:flex;gap:10px;
-}
-.search input{
- flex:1;min-width:0;padding:15px;background:#171717;
- border:1px solid #444;color:white;border-radius:8px;
-}
-button.primary{
- background:var(--red);border:0;color:white;
- padding:14px 19px;border-radius:8px;font-weight:bold;cursor:pointer;
-}
+.search{max-width:650px;margin:28px auto 0;display:flex;gap:10px}
+.search input{flex:1;min-width:0;padding:15px;background:#171717;border:1px solid #444;color:white;border-radius:8px}
+.primary{background:var(--red);border:0;color:white;padding:14px 19px;border-radius:8px;font-weight:bold;cursor:pointer}
 main{max-width:1200px;margin:auto;padding:35px 22px;min-height:55vh}
 h2.section-title{font-size:26px;margin:15px 0 24px}
 h2 span{color:var(--red)}
-.category-grid,.guide-grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:17px;
-}
-.category-card,.guide-card{
- background:linear-gradient(145deg,#191919,#101010);
- border:1px solid var(--border);border-radius:12px;
- padding:22px;transition:.2s;
-}
-.category-card:hover,.guide-card:hover{
- border-color:var(--red);transform:translateY(-3px);
- box-shadow:0 0 17px #ff242422;
-}
+.category-grid,.guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:17px}
+.category-card,.guide-card{background:linear-gradient(145deg,#191919,#101010);border:1px solid var(--border);border-radius:12px;padding:22px;transition:.2s}
+.category-card:hover,.guide-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 0 17px #ff242422}
 .category-card{cursor:pointer}
 .category-icon{font-size:32px}
 .category-card p,.guide-card p{color:#aaa;line-height:1.6}
 .guide-card{display:flex;flex-direction:column;gap:9px}
 .guide-card h3{margin:0;font-size:18px}
-.tag{
- color:#ff5555;font-size:12px;text-transform:uppercase;letter-spacing:1px;
-}
+.tag{color:#ff5555;font-size:12px;text-transform:uppercase;letter-spacing:1px}
 .actions{display:flex;gap:8px;margin-top:auto;padding-top:10px;flex-wrap:wrap}
-.small{
- background:#252525;color:white;border:1px solid #444;
- padding:9px 12px;border-radius:6px;cursor:pointer;
-}
+.small,.back{background:#252525;color:white;border:1px solid #444;padding:9px 12px;border-radius:6px;cursor:pointer}
 .small.red{background:#620c0c;border-color:#a51b1b}
 .article{max-width:850px;margin:auto}
-.back{
- background:#222;color:white;border:1px solid #444;
- padding:10px 15px;border-radius:7px;cursor:pointer;margin-bottom:20px;
-}
+.back{padding:10px 15px;margin-bottom:20px}
 .article h1{font-size:clamp(29px,5vw,43px)}
-.intro{
- font-size:18px;line-height:1.8;color:#ccc;
- border-left:3px solid var(--red);padding-left:17px;
-}
+.intro{font-size:18px;line-height:1.8;color:#ccc;border-left:3px solid var(--red);padding-left:17px}
 .article-section{margin:30px 0;color:#ddd;line-height:1.85}
 .article-section h2{font-size:22px;color:var(--red)}
 .article-section li{margin:8px 0}
 .article-section a{color:#ff7777}
 .tip{padding:17px;background:#211010;border:1px solid #642020;border-radius:8px}
 .empty{padding:25px;background:#151515;color:#aaa;border-radius:8px}
-footer{
- text-align:center;border-top:1px solid #292929;
- padding:28px;color:#777;
-}
+.pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin:25px 0;flex-wrap:wrap}
+footer{text-align:center;border-top:1px solid #292929;padding:28px;color:#777}
 @media(max-width:600px){
  header{justify-content:center}
  nav{justify-content:center}
@@ -120,8 +70,9 @@ footer{
 <section class="hero" id="hero">
  <h1>Bienvenue sur <span>SOLVEO</span></h1>
  <p>Toutes les réponses, au même endroit.</p>
+ <p><strong id="totalGuides">1 000 guides disponibles</strong></p>
  <div class="search">
-  <input id="searchInput" placeholder="Rechercher parmi les 120 guides..."
+  <input id="searchInput" placeholder="Rechercher parmi les 1 000 guides..."
    onkeydown="if(event.key==='Enter')search()">
   <button class="primary" onclick="search()">Rechercher</button>
  </div>
@@ -136,6 +87,11 @@ footer{
 </footer>
 
 <script>
+
+/* =========================================
+   1. CATÉGORIES
+========================================= */
+
 const categories=[
  {name:"Informatique",icon:"💻",description:"Ordinateurs, logiciels et Internet."},
  {name:"Éducation",icon:"📚",description:"Apprentissage, organisation et connaissances."},
@@ -145,157 +101,95 @@ const categories=[
  {name:"Technologie",icon:"⚡",description:"Innovations et fonctionnement des technologies."}
 ];
 
-/*
-FORMAT DES GUIDES :
-Titre | Introduction | Explications | Conseil pratique
+/* =========================================
+   2. SUJETS DES 1 000 GUIDES
+   28 sujets par catégorie.
+========================================= */
 
-Chaque catégorie contient 20 guides.
-*/
-
-const raw={
+const topics={
 
 "Informatique":[
-["Comprendre le fonctionnement d'un ordinateur","Un ordinateur reçoit, traite, stocke et transmet des informations.","Le processeur exécute les instructions. La RAM conserve temporairement les données des logiciels actifs. Le SSD ou le disque dur conserve les fichiers. La carte mère relie les composants et permet leur communication.","Pour comprendre les performances, regarde plusieurs composants : processeur, RAM, stockage et carte graphique."],
-["Bien organiser ses fichiers et dossiers","Une organisation claire facilite la recherche et protège les documents importants.","Crée des dossiers principaux comme Documents, Images, Projets et Archives. Utilise des noms précis avec une date ou une version. Sur Windows, l'Explorateur permet de rechercher un fichier par son nom, son type ou sa date.","Fais une copie indépendante des documents importants."],
-["Comprendre les systèmes d'exploitation","Le système d'exploitation permet aux logiciels de communiquer avec le matériel.","Windows, macOS, Linux, Android et iOS sont des systèmes d'exploitation. Ils gèrent la mémoire, les fichiers, les périphériques, les comptes et l'exécution des applications.","Vérifie la compatibilité d'un logiciel avec ton système avant de l'installer."],
-["Installer un logiciel correctement","L'installation ajoute un programme à ton appareil afin que tu puisses l'utiliser.","Télécharge les logiciels depuis le site officiel de leur éditeur ou une boutique reconnue. Vérifie le nom du programme, sa compatibilité et les autorisations demandées. Lis les écrans d'installation avant de continuer.","Évite les sites de téléchargement inconnus et les programmes qui promettent des performances miraculeuses."],
-["Comprendre la mémoire RAM","La mémoire vive conserve temporairement les données dont les programmes ont besoin.","Lorsque plusieurs applications fonctionnent simultanément, elles utilisent de la RAM. Si la mémoire disponible devient insuffisante, le système peut utiliser temporairement le stockage, généralement plus lent.","Pour choisir un ordinateur, vérifie la quantité de RAM et les possibilités d'évolution."],
-["Comprendre les SSD et les disques durs","Les SSD et les disques durs servent à conserver les fichiers même lorsque l'ordinateur est éteint.","Un disque dur traditionnel utilise des plateaux magnétiques en rotation. Un SSD utilise de la mémoire flash et n'a pas de pièces mobiles de ce type. Les SSD offrent généralement des temps d'accès plus rapides.","Choisis la capacité selon tes logiciels, photos, vidéos et besoins de sauvegarde."],
-["Se connecter à un réseau Wi-Fi","Le Wi-Fi permet de relier sans fil un appareil à un réseau local.","La box ou le routeur diffuse un réseau sans fil. L'appareil sélectionne le réseau, s'authentifie avec le mot de passe puis reçoit les paramètres nécessaires pour communiquer.","Place la box dans un endroit dégagé et utilise un mot de passe robuste."],
-["Comprendre les navigateurs Internet","Un navigateur affiche les pages Web et permet d'interagir avec les sites.","Le navigateur interprète des ressources comme HTML, CSS, images et JavaScript. Il propose aussi des onglets, favoris, téléchargements, extensions et paramètres de confidentialité.","Mets ton navigateur à jour et limite les extensions aux outils réellement utiles."],
-["Nettoyer l'espace de stockage","Libérer de l'espace facilite la gestion des fichiers et certaines mises à jour.","Repère les fichiers volumineux et les applications inutilisées. Sur Windows, les paramètres de stockage indiquent les catégories qui occupent de la place. Vérifie les téléchargements et la corbeille avant toute suppression.","Ne supprime jamais un dossier système simplement parce que son nom semble inutile."],
-["Comprendre les extensions de fichiers","L'extension indique généralement le type de fichier et le logiciel susceptible de l'ouvrir.","Un fichier JPG est généralement une image, PDF un document, DOCX un document Word et HTML une page Web. L'extension ne garantit toutefois pas que le fichier est sûr.","Affiche les extensions dans l'Explorateur et vérifie les fichiers inattendus avant de les ouvrir."],
-["Faire une sauvegarde de son ordinateur","Une sauvegarde est une copie permettant de récupérer des données après une perte ou une panne.","Les fichiers peuvent disparaître à cause d'une panne, d'une erreur ou d'un incident informatique. Une sauvegarde peut être stockée sur un disque externe ou un service en ligne. Une synchronisation seule ne remplace pas toujours une sauvegarde indépendante.","Garde au moins une copie indépendante et vérifie que tu peux restaurer tes fichiers."],
-["Comprendre les mises à jour","Les mises à jour corrigent des défauts et peuvent améliorer la sécurité et la compatibilité.","Les éditeurs publient des mises à jour pour corriger des bugs, améliorer des fonctions et réparer des failles de sécurité. Certaines mises à jour nécessitent un redémarrage.","Active les mises à jour automatiques lorsque c'est possible."],
-["Découvrir le cloud","Le cloud permet d'utiliser des ressources informatiques hébergées sur des serveurs distants.","Un service cloud peut stocker des fichiers, synchroniser plusieurs appareils ou exécuter des applications à distance. Les données transitent par Internet et sont conservées selon les conditions du fournisseur.","Vérifie les paramètres de partage, la confidentialité et les possibilités d'exporter tes données."],
-["Comprendre les fichiers compressés","La compression regroupe des fichiers et peut réduire leur taille ou faciliter leur transport.","Les formats ZIP et 7z regroupent plusieurs éléments dans une archive. La compression sans perte permet de retrouver les fichiers originaux. Certains formats réduisent davantage la taille selon le contenu.","N'ouvre pas une archive inattendue provenant d'un expéditeur inconnu."],
-["Résoudre les problèmes courants de Windows","Une panne logicielle peut parfois être résolue par des vérifications simples.","Note le message d'erreur, vérifie les mises à jour et observe si le problème concerne une application ou tout le système. Les paramètres Windows proposent des outils de dépannage et un historique des mises à jour.","Avant une opération importante, sauvegarde tes documents personnels."],
-["Monter son premier PC","Assembler un ordinateur demande de choisir des composants compatibles.","Les principaux éléments sont le processeur, la carte mère, la mémoire RAM, le stockage, l'alimentation et le boîtier. Il faut vérifier le socket du processeur, le format de la carte mère, la mémoire acceptée et les dimensions des composants.","Vérifie la compatibilité de toutes les pièces et suis les notices des fabricants."],
-["Comprendre les adresses IP","Une adresse IP permet d'identifier une interface réseau pour échanger des données.","IPv4 utilise quatre nombres séparés par des points. IPv6 utilise un format plus étendu. Une adresse locale sert aux communications dans un réseau privé tandis qu'une adresse publique permet notamment de communiquer avec Internet.","Ne publie pas inutilement tes informations réseau."],
-["Choisir un navigateur Internet","Le choix d'un navigateur dépend de la compatibilité, de la confidentialité et des fonctionnalités.","Les navigateurs diffèrent par leurs extensions, leur synchronisation, leur gestion des cookies et leurs protections contre le suivi. Il faut aussi vérifier leur fréquence de mise à jour.","Compare les paramètres de confidentialité et les extensions disponibles."],
-["Comprendre le fonctionnement d'un serveur","Un serveur fournit des ressources ou des services à d'autres appareils.","Un serveur peut héberger un site Web, une base de données ou des fichiers. Lorsqu'un navigateur demande une page, le serveur reçoit la requête, traite les informations et renvoie une réponse.","Un site fiable doit prévoir les sauvegardes, les mises à jour et la protection des données."],
-["Protéger ses données informatiques","La protection des données repose sur plusieurs méthodes complémentaires.","Les sauvegardes permettent de retrouver des fichiers après une panne ou une suppression. Les mises à jour corrigent des vulnérabilités. Les comptes séparés et les droits limités réduisent aussi les erreurs accidentelles.","Conserve plusieurs copies de tes fichiers importants, dont une copie indépendante."]
+"Ordinateurs de bureau","Ordinateurs portables","Processeurs","Mémoire RAM",
+"Disques SSD","Disques durs","Cartes graphiques","Cartes mères",
+"Alimentations PC","Boîtiers informatiques","Systèmes Windows","Systèmes Linux",
+"Mac et macOS","Navigateurs Internet","Réseaux Wi-Fi","Réseaux Ethernet",
+"Adresses IP","Serveurs informatiques","Stockage cloud","Sauvegardes",
+"Fichiers numériques","Archives ZIP","Logiciels de bureautique","Applications mobiles",
+"Imprimantes informatiques","Écrans et moniteurs","Périphériques USB","Maintenance informatique"
 ],
 
 "Éducation":[
-["Apprendre avec la répétition espacée","Revoir une notion à plusieurs moments aide à la mémoriser sur la durée.","Après avoir appris une notion, essaie de la retrouver le lendemain, puis quelques jours après et une semaine plus tard. Le rappel actif consiste à répondre sans regarder le cours, puis à vérifier la réponse.","Utilise des questions courtes ou des cartes mémoire plutôt que de relire passivement."],
-["Construire un planning de travail réaliste","Un planning sert à répartir les tâches et à éviter de tout faire au dernier moment.","Liste les devoirs, les dates limites et les étapes nécessaires. Estime le temps de chaque tâche, donne la priorité aux échéances proches et garde des marges pour les imprévus.","Prévois des objectifs précis comme refaire trois exercices plutôt que simplement travailler une matière."],
-["Prendre des notes efficacement","Les notes servent à conserver les idées essentielles et à faciliter les révisions.","Repère les notions importantes, les définitions, les exemples et les liens entre les idées. Utilise des titres et des mots-clés. Tu peux compléter les notes après le cours avec un résumé personnel.","Ne cherche pas à recopier chaque phrase : privilégie la compréhension."],
-["Mieux comprendre un texte","Comprendre un texte consiste à identifier son sujet, ses idées et leurs relations.","Lis le titre et les sous-titres pour repérer le thème. Distingue les idées principales des exemples. Après chaque partie, reformule ce que tu as compris avec tes propres mots.","Si un mot bloque la compréhension, cherche sa définition puis relis la phrase."],
-["Préparer un contrôle","Une préparation progressive permet de repérer les notions maîtrisées et celles à retravailler.","Liste les chapitres concernés. Transforme les titres en questions, refais les exercices et vérifie les définitions. Termine par un entraînement sans le cours afin de repérer les lacunes.","Répartis le travail sur plusieurs jours plutôt que de tout découvrir la veille."],
-["Réussir un exposé oral","Un exposé clair présente une idée organisée et compréhensible pour le public.","Prépare une introduction qui annonce le sujet, plusieurs parties ordonnées et une conclusion. Les diapositives doivent soutenir la parole, pas contenir tout le texte. Entraîne-toi à voix haute.","Ne lis pas intégralement tes diapositives. Utilise des mots-clés pour guider ton explication."],
-["Apprendre du vocabulaire dans une langue","Le vocabulaire se retient mieux lorsqu'il est réutilisé dans différents contextes.","Associe chaque mot à sa signification, sa prononciation et une phrase d'exemple. Revois les mots à intervalles espacés. Regroupe-les par thème ou par situation.","Apprends aussi les expressions et les phrases, pas uniquement des listes isolées."],
-["Comprendre une consigne scolaire","Une consigne précise ce qui est demandé et la manière de réaliser le travail.","Repère le verbe d'action : expliquer, comparer, justifier, calculer ou décrire. Identifie ensuite le sujet, les documents à utiliser et le format attendu.","Souligne les verbes importants et vérifie que ta réponse correspond exactement à la demande."],
-["Faire une fiche de révision","Une fiche synthétise les éléments essentiels d'un chapitre.","Sélectionne les définitions, formules, dates et idées importantes. Ajoute un exemple et une question de vérification. Organise la page avec des titres et des éléments visuels simples.","Une fiche doit être plus courte que le cours et compréhensible sans recopier tout le chapitre."],
-["Résoudre un problème de mathématiques","La résolution passe par la compréhension de la situation et le choix d'une méthode.","Lis l'énoncé, repère les données et ce que l'on cherche. Choisis une opération ou une formule adaptée, écris les étapes et vérifie si le résultat est cohérent avec les unités.","Si tu bloques, commence par reformuler le problème et faire un schéma."],
-["Développer son esprit critique","L'esprit critique consiste à examiner une information avant de l'accepter.","Distingue les faits, les opinions et les interprétations. Cherche l'auteur, la date, les preuves et le contexte. Compare plusieurs sources indépendantes.","Ne confonds pas popularité, nombre de partages et fiabilité."],
-["Éviter la procrastination","La procrastination consiste à repousser une tâche alors qu'on sait qu'elle doit être faite.","Une tâche trop vague peut sembler difficile à commencer. Découpe-la en petites actions : ouvrir le document, lire une page ou résoudre un exercice. Prépare le matériel avant la séance.","Commence par une étape courte et définie plutôt que d'attendre la motivation parfaite."],
-["Comprendre les fractions","Une fraction représente une quantité divisée en parts égales.","Le numérateur indique le nombre de parts prises et le dénominateur le nombre de parts égales dans l'unité. Des fractions équivalentes représentent la même quantité. Pour additionner des fractions, utilise un dénominateur commun.","Utilise un dessin ou une droite graduée pour visualiser les fractions."],
-["Mémoriser une leçon avec des questions","Les questions obligent à retrouver activement les informations apprises.","Transforme chaque titre en question. Cache le cours et réponds de mémoire, puis vérifie. Classe les questions selon leur difficulté afin de consacrer plus de temps aux points mal maîtrisés.","Une réponse fausse est une indication utile sur ce qu'il faut revoir."],
-["Organiser ses documents scolaires","Un classement régulier évite de perdre les cours et facilite les révisions.","Classe les documents par matière, puis par chapitre ou date. Garde les feuilles dans l'ordre et identifie les fichiers numériques avec un nom explicite.","Fais un petit rangement chaque semaine."],
-["Construire une dissertation","Une dissertation développe une réponse organisée à une question en s'appuyant sur des arguments.","Analyse le sujet et définis les mots importants. Formule une problématique, construis un plan logique et développe chaque partie avec une idée, une explication et un exemple.","Vérifie que chaque paragraphe contribue réellement à répondre au sujet."],
-["Améliorer son orthographe","L'orthographe progresse grâce à la compréhension des règles et à leur réutilisation.","L'orthographe lexicale concerne l'écriture des mots. L'orthographe grammaticale concerne notamment les accords. Identifier le sujet d'un verbe aide à vérifier sa terminaison.","Relis séparément les verbes, les accords et les mots difficiles."],
-["Faire une recherche documentaire","Une recherche documentaire consiste à trouver, comparer et utiliser des informations fiables.","Transforme ton sujet en questions précises. Consulte plusieurs documents, relève leurs auteurs et leurs dates. Distingue les informations vérifiables des opinions et prends des notes avec les références.","Reformule avec tes propres mots et cite les sources utilisées."],
-["Comprendre les pourcentages","Un pourcentage exprime une proportion sur une base de 100.","Pour calculer 20 % d'une quantité, multiplie cette quantité par 20 puis divise par 100. Une hausse et une baisse du même pourcentage ne s'annulent pas forcément, car la base change.","Estime d'abord si ton résultat est cohérent avec la quantité de départ."],
-["Préparer son orientation scolaire","L'orientation consiste à explorer des formations et des métiers correspondant à différents projets.","Renseigne-toi sur les matières étudiées, les diplômes, les conditions d'admission et les débouchés. Les fiches métiers et les journées portes ouvertes permettent de découvrir les formations.","Compare plusieurs possibilités et discute avec un professeur ou un conseiller d'orientation."]
+"Organisation scolaire","Méthodes de mémorisation","Révisions efficaces","Prise de notes",
+"Lecture et compréhension","Expression écrite","Expression orale","Apprentissage des langues",
+"Vocabulaire anglais","Grammaire française","Orthographe","Conjugaison",
+"Mathématiques","Fractions","Pourcentages","Géométrie",
+"Sciences physiques","Chimie au collège","Biologie","Histoire",
+"Géographie","Recherche documentaire","Exposés scolaires","Dissertations",
+"Gestion du temps","Préparation aux examens","Orientation scolaire","Esprit critique"
 ],
 
 "Réparation":[
-["Diagnostiquer un ordinateur qui ne démarre plus","Un ordinateur peut refuser de démarrer à cause de l'alimentation, de l'écran ou d'un problème logiciel.","Observe les voyants, les sons et les messages affichés. Vérifie la prise et le chargeur sans utiliser de câble endommagé. Débranche les accessoires non indispensables. Si l'écran reste noir, le problème peut aussi concerner l'affichage.","Arrête les essais en cas d'odeur de brûlé, de batterie gonflée ou de chaleur anormale. Demande un diagnostic professionnel."],
-["Entretenir son smartphone","Un entretien régulier limite l'accumulation de poussière et certains dommages.","Nettoie l'écran avec un chiffon doux adapté. Évite les liquides dans les ouvertures et les objets pointus dans le port de charge. Une coque adaptée peut réduire certains dégâts liés aux chocs.","Consulte les recommandations du fabricant pour ton modèle."],
-["Comprendre une batterie qui se décharge vite","L'autonomie dépend de la batterie, de l'écran, des applications et des conditions d'utilisation.","La luminosité élevée, les jeux, le GPS et une mauvaise réception réseau peuvent augmenter la consommation. Les batteries rechargeables perdent progressivement de leur capacité avec le temps.","Consulte les statistiques de batterie pour repérer les applications très consommatrices."],
-["Entretenir un clavier d'ordinateur","La poussière et les miettes peuvent gêner le fonctionnement des touches.","Éteins et débranche le clavier avant de le nettoyer. Utilise un chiffon doux et, si le fabricant l'autorise, de l'air adapté aux appareils électroniques. Ne verse jamais de liquide directement sur les touches.","Pour un clavier portable, ne retire pas les touches sans connaître la procédure du fabricant."],
-["Comprendre un ordinateur qui chauffe","La chaleur provient notamment du processeur et de la carte graphique.","Les ventilateurs et les dissipateurs évacuent la chaleur. Des aérations obstruées, une pièce chaude ou une charge importante peuvent augmenter la température. Certains ordinateurs réduisent automatiquement leurs performances pour se protéger.","Pose l'appareil sur une surface stable et dégagée. N'obstrue pas ses aérations."],
-["Diagnostiquer un écran qui clignote","Un scintillement peut être lié au câble, à l'écran ou au pilote graphique.","Vérifie les branchements et teste un autre câble compatible si possible. Contrôle la résolution et la fréquence de rafraîchissement recommandées par l'écran. Une mise à jour du pilote peut parfois corriger un problème logiciel.","Si le défaut apparaît aussi avec un autre appareil, l'écran lui-même peut être en cause."],
-["Comprendre les problèmes de charge d'un téléphone","Une charge lente ou interrompue peut provenir du chargeur, du câble ou du port.","Teste un chargeur compatible en bon état. Vérifie visuellement le port sans y introduire d'objet métallique. La température peut aussi limiter temporairement la charge.","N'utilise pas de câble abîmé et ne tente pas de réparer une batterie gonflée."],
-["Entretenir une souris d'ordinateur","La poussière et les saletés peuvent gêner le capteur ou les boutons.","Débranche la souris ou éteins-la. Nettoie la surface et les zones accessibles avec un chiffon doux. Pour une souris optique, vérifie que la surface utilisée est adaptée au capteur.","Évite les produits liquides dans les boutons et la molette."],
-["Comprendre un disque dur bruyant","Un disque dur mécanique contient des pièces mobiles qui peuvent produire certains sons.","Des clics répétés ou des erreurs de lecture peuvent signaler un problème. Les SSD ne possèdent pas les mêmes pièces mécaniques. En cas de défaillance, les données deviennent prioritaires.","Sauvegarde les fichiers importants si le disque reste accessible et demande un diagnostic."],
-["Résoudre un problème d'imprimante","Les erreurs d'impression peuvent venir de la connexion, du papier, de l'encre ou du logiciel.","Vérifie l'alimentation, le papier, les voyants et la connexion. Contrôle que la bonne imprimante est sélectionnée. Une file d'attente bloquée peut empêcher les nouveaux documents de partir.","Suis les instructions du fabricant pour retirer un bourrage papier sans forcer."],
-["Entretenir un ventilateur domestique","La poussière accumulée peut réduire le débit d'air et augmenter le bruit.","Débranche l'appareil avant le nettoyage. Consulte la notice pour savoir si la grille peut être retirée. Nettoie les surfaces accessibles sans mouiller le moteur ni les parties électriques.","Ne démonte pas les éléments électriques si tu n'es pas qualifié."],
-["Comprendre une connexion Internet instable","Une connexion instable peut provenir du Wi-Fi, de la box ou du fournisseur.","Compare plusieurs appareils et, si possible, teste une connexion filaire. Vérifie les voyants de la box et les interruptions signalées par le fournisseur. La distance et les obstacles réduisent parfois le signal.","Redémarre la box selon les instructions de ton fournisseur."],
-["Diagnostiquer un appareil qui ne s'allume plus","L'absence de démarrage peut avoir une origine électrique, mécanique ou logicielle.","Vérifie les éléments externes accessibles : prise, interrupteur, câble et chargeur adapté. Cherche un voyant ou un message. Consulte la notice pour les procédures prévues par le fabricant.","Ne démonte pas un appareil branché au secteur. Demande une intervention qualifiée si nécessaire."],
-["Entretenir une console de jeux","Une console a besoin d'une circulation d'air correcte pour fonctionner correctement.","Installe-la sur une surface stable et laisse de l'espace autour des aérations. Nettoie les surfaces extérieures avec un chiffon doux. Vérifie régulièrement les mises à jour du système et des jeux.","N'introduis pas d'objet dans les ouvertures."],
-["Préparer un appareil avant une réparation","Une préparation adaptée protège les données et facilite l'intervention.","Sauvegarde les fichiers, note le modèle et décris précisément la panne. Retire les accessoires non nécessaires et consulte les conditions de garantie.","Demande quelles données seront accessibles pendant la réparation."],
-["Diagnostiquer un casque audio","Un casque peut présenter des problèmes de son, de connexion ou de batterie.","Vérifie le volume, la source audio et les paramètres de sortie. Pour un casque Bluetooth, vérifie l'appairage et le niveau de batterie. Pour un casque filaire, inspecte visuellement le câble et la prise.","Teste le casque avec un autre appareil compatible pour isoler le problème."],
-["Entretenir une télécommande","Une télécommande fonctionne grâce à des boutons, un circuit électronique et une alimentation.","Vérifie les piles et leur sens d'installation. Nettoie l'extérieur avec un chiffon doux. Si le fabricant le permet, vérifie les contacts accessibles sans forcer ni démonter l'appareil.","Retire les piles si la télécommande ne sera pas utilisée pendant une longue période."],
-["Comprendre une télévision sans image","Une télévision peut avoir du son sans afficher correctement l'image.","Vérifie la source sélectionnée, les câbles et l'appareil connecté. Essaie le menu intégré de la télévision pour savoir si le problème vient de la source externe ou de l'écran.","Ne démonte pas l'écran : certaines parties peuvent présenter des risques électriques."],
-["Entretenir un appareil électroménager","L'entretien dépend du type d'appareil et des recommandations du fabricant.","Nettoie les filtres accessibles, vérifie les joints et retire les résidus selon la notice. Un entretien régulier peut préserver le fonctionnement et limiter certaines pannes.","Débranche l'appareil avant un nettoyage qui nécessite d'accéder à des parties normalement protégées."],
-["Reconnaître quand faire appel à un réparateur","Certaines pannes nécessitent des compétences et des équipements spécialisés.","Une odeur de brûlé, une batterie déformée, une fuite d'eau ou un problème électrique ne doivent pas être ignorés. Une réparation mal réalisée peut aggraver les dégâts ou présenter un danger.","Privilégie un professionnel qualifié pour les interventions électriques, les batteries et les appareils complexes."]
+"Ordinateurs en panne","Téléphones portables","Batteries rechargeables","Écrans de téléphone",
+"Claviers informatiques","Souris informatiques","Imprimantes","Casques audio",
+"Écouteurs sans fil","Consoles de jeux","Manettes de jeu","Téléviseurs",
+"Routeurs Internet","Connexions Wi-Fi","Disques de stockage","Ventilateurs",
+"Appareils électroménagers","Réfrigérateurs","Lave-linge","Lave-vaisselle",
+"Petits appareils électriques","Télécommandes","Chargeurs","Câbles électriques",
+"Écrans d'ordinateur","Entretien des appareils","Diagnostic des pannes","Préparation des réparations"
 ],
 
 "Maison":[
-["Économiser l'électricité à la maison","Réduire sa consommation électrique peut limiter les dépenses et l'impact environnemental.","La consommation se mesure en kilowattheures. Elle dépend de la puissance de l'appareil et de sa durée d'utilisation. Le chauffage, l'eau chaude et les équipements électriques peuvent peser différemment selon le logement.","Compare les relevés sur des périodes similaires et adapte les habitudes aux appareils utilisés."],
-["Organiser son espace de travail","Un espace rangé facilite la concentration et la recherche du matériel.","Garde à portée de main les objets utilisés souvent. Classe les documents dans des dossiers et limite les éléments qui encombrent la surface. Un éclairage adapté améliore les conditions de travail.","Range quelques minutes après chaque séance."],
-["Trier correctement ses déchets","Le tri permet de diriger certains matériaux vers les filières de recyclage adaptées.","Les consignes peuvent varier selon la commune. Les emballages, le verre, les papiers, les déchets alimentaires et les déchets dangereux ne suivent pas toujours les mêmes circuits.","Consulte les consignes de ta commune."],
-["Réduire le gaspillage alimentaire","Une meilleure organisation des repas aide à utiliser les aliments avant qu'ils ne soient perdus.","Planifie quelques repas, vérifie les placards avant les courses et range les produits selon leur conservation. La date limite de consommation et la date de durabilité minimale n'ont pas la même signification.","Respecte les indications de conservation et ne consomme pas un aliment douteux."],
-["Comprendre les étiquettes énergétiques","L'étiquette énergétique aide à comparer la performance de certains appareils.","L'étiquette européenne présente une classe énergétique et des informations propres au produit, comme la consommation, le volume ou le bruit. Les critères diffèrent selon les familles d'appareils.","Compare des appareils de même catégorie et de capacité similaire."],
-["Entretenir son réfrigérateur","Un réfrigérateur propre et correctement réglé conserve les aliments dans de bonnes conditions.","Évite de surcharger les espaces de circulation d'air. Vérifie les joints, nettoie les surfaces et respecte les consignes de température du fabricant.","Ne bloque pas les aérations intérieures et vérifie régulièrement la fermeture de la porte."],
-["Organiser le rangement d'une pièce","Un rangement fonctionnel facilite l'utilisation quotidienne de l'espace.","Regroupe les objets par usage, place les éléments fréquents à portée de main et identifie les endroits réservés au rangement. Les boîtes étiquetées permettent de retrouver plus facilement les objets.","Évite d'empiler des objets lourds en hauteur ou de bloquer les passages."],
-["Réduire sa consommation d'eau","Les gestes quotidiens et les équipements influencent la quantité d'eau utilisée.","Un robinet qui fuit peut gaspiller de l'eau. Les douches, les toilettes, le lavage et l'arrosage représentent différents usages. Les équipements économes peuvent réduire certains débits.","Signale une fuite importante à un adulte ou au responsable du logement."],
-["Comprendre le chauffage d'un logement","Le chauffage compense les pertes de chaleur pour maintenir une température intérieure.","L'isolation, les fenêtres, la ventilation et le réglage du système influencent le confort et la consommation. Les besoins varient selon les pièces et la météo.","Ne couvre jamais un radiateur et ne modifie pas une installation sans compétence."],
-["Nettoyer les surfaces sans les abîmer","Les matériaux ne réagissent pas tous de la même manière aux produits de nettoyage.","Le bois, le verre, l'inox et les surfaces peintes demandent parfois des méthodes différentes. Un produit trop agressif peut ternir ou endommager une surface.","Lis l'étiquette du produit et teste d'abord sur une petite zone discrète."],
-["Bien conserver les aliments","La conservation dépend de la température, de l'emballage et de la nature de l'aliment.","Respecte les températures indiquées, sépare les aliments crus et cuits et utilise des contenants adaptés. Les indications de date sur les emballages permettent de guider la consommation.","En cas de doute sur la sécurité d'un aliment, ne prends pas de risque."],
-["Préparer un déménagement","Une préparation progressive réduit les oublis et facilite le transport des affaires.","Fais un inventaire, trie les objets, prépare les cartons par pièce et indique leur contenu. Garde à part les documents importants et les objets nécessaires le jour du déménagement.","Ne surcharge pas les cartons et demande de l'aide pour les objets lourds."],
-["Comprendre le compostage","Le compostage transforme certains déchets organiques en matière utile pour le sol.","Les déchets végétaux peuvent être compostés avec un équilibre entre matières humides et matières sèches. L'aération et l'humidité influencent la décomposition. Tous les déchets ne conviennent pas à tous les composteurs.","Vérifie les consignes du composteur collectif ou local."],
-["Limiter les pertes de chaleur","L'isolation et l'étanchéité réduisent les échanges de chaleur entre intérieur et extérieur.","Les combles, les murs, les fenêtres et les portes peuvent contribuer aux pertes thermiques. Les joints peuvent aider dans certaines situations, mais ne remplacent pas une isolation adaptée.","Demande un diagnostic qualifié avant des travaux importants."],
-["Créer une routine de rangement","Une routine courte et régulière aide à maintenir un espace ordonné.","Choisis quelques actions simples : remettre les objets à leur place, trier le courrier, vider les surfaces et préparer les affaires du lendemain.","Commence par une seule petite habitude et ajoute les autres progressivement."],
-["Entretenir les plantes d'intérieur","Les plantes ont des besoins différents en lumière, en eau et en nutriments.","Observe les feuilles et le substrat pour comprendre les besoins de la plante. Certaines espèces préfèrent une lumière indirecte, tandis que d'autres supportent mieux le soleil. Un pot percé facilite l'évacuation de l'eau excédentaire.","Identifie l'espèce avant de choisir la fréquence d'arrosage."],
-["Prévenir l'humidité dans une pièce","Une humidité excessive peut favoriser les moisissures et dégrader certains matériaux.","La ventilation renouvelle l'air et évacue une partie de l'humidité produite par les activités quotidiennes. Une fuite, une infiltration ou une ventilation insuffisante peut expliquer un problème persistant.","Signale les moisissures importantes ou les infiltrations au responsable du logement."],
-["Organiser ses courses","Préparer ses courses aide à gagner du temps et à limiter les achats inutiles.","Vérifie les réserves, prépare une liste par rayon et réfléchis aux repas prévus. Compare les quantités et les prix au kilogramme ou au litre pour mieux comprendre les offres.","Évite de faire les courses sans vérifier ce qui est déjà disponible."],
-["Comprendre le recyclage du papier","Le recyclage permet de réutiliser les fibres de papier pour fabriquer de nouveaux produits.","Les papiers collectés sont triés puis transformés en pâte. Les fibres peuvent être réutilisées plusieurs fois, mais elles s'usent progressivement. Les consignes locales déterminent les papiers acceptés.","Garde le papier propre et suis les consignes de tri de ta commune."],
-["Préparer une maison en cas d'absence","Quelques vérifications simples permettent de mieux organiser le logement avant un départ.","Vérifie les fenêtres, les appareils inutilisés et les consignes du logement. Prévois la gestion du courrier et des plantes si l'absence dure plusieurs jours.","Demande à un adulte de vérifier les installations importantes et les consignes de sécurité."]
+"Économies d'électricité","Économies d'eau","Organisation du logement","Rangement des chambres",
+"Nettoyage des surfaces","Entretien du réfrigérateur","Conservation des aliments","Tri des déchets",
+"Recyclage du papier","Compostage","Chauffage domestique","Isolation thermique",
+"Humidité intérieure","Ventilation du logement","Entretien des plantes","Organisation des courses",
+"Réduction du gaspillage","Préparation d'un déménagement","Organisation de la cuisine","Entretien du linge",
+"Nettoyage des sols","Éclairage domestique","Équipements économes","Gestion des documents",
+"Aménagement du bureau","Entretien des appareils","Prévention des petites fuites","Organisation quotidienne"
 ],
 
 "Sécurité":[
-["Créer des mots de passe solides","Un mot de passe unique et difficile à deviner protège mieux un compte.","Privilégie une phrase de passe longue et différente pour chaque service. Évite les informations personnelles et les mots de passe réutilisés. Un gestionnaire peut générer et conserver des identifiants uniques.","Active l'authentification multifacteur sur les comptes importants."],
-["Reconnaître les tentatives de phishing","L'hameçonnage cherche à tromper une personne pour obtenir des informations ou provoquer une action.","Un message peut imiter une banque, un transporteur ou une administration. Observe l'adresse de l'expéditeur, le domaine du lien et les demandes urgentes. Un logo ne prouve pas l'authenticité.","Ouvre toi-même l'application ou le site officiel au lieu de cliquer sur un lien reçu."],
-["Protéger ses données personnelles","Les données personnelles peuvent permettre d'identifier directement ou indirectement une personne.","Un nom, une adresse, une photo, une localisation ou un identifiant peuvent être des données personnelles. Avant de partager une information, demande-toi qui pourra la voir et pourquoi elle est demandée.","Limite les informations publiées et vérifie les paramètres de confidentialité."],
-["Sécuriser ses réseaux sociaux","Les paramètres de confidentialité permettent de contrôler une partie de la visibilité des publications.","Vérifie qui peut voir tes publications, t'envoyer des messages ou retrouver ton profil. Les contenus partagés peuvent être copiés ou capturés même après suppression.","Évite de publier des informations permettant de connaître tes habitudes ou tes déplacements."],
-["Reconnaître une arnaque en ligne","Une arnaque utilise la tromperie pour obtenir de l'argent, des données ou un avantage.","Méfie-toi des offres trop belles, des demandes de paiement inhabituelles, des faux concours et des personnes qui mettent la pression. Vérifie l'identité du vendeur ou de l'organisme avec des sources indépendantes.","Ne paie pas dans l'urgence et demande conseil en cas de doute."],
-["Protéger son smartphone","Un téléphone contient souvent des messages, photos, comptes et données personnelles.","Utilise un verrouillage d'écran, installe les mises à jour et limite les autorisations des applications. Active les fonctions de verrouillage à distance proposées par le fabricant si elles te conviennent.","Ne laisse pas ton appareil déverrouillé sans surveillance."],
-["Comprendre l'authentification à deux facteurs","Cette méthode demande une preuve supplémentaire en plus du mot de passe.","Le deuxième facteur peut être une application d'authentification, une clé de sécurité ou une validation sur un appareil. Il réduit les risques liés au vol d'un mot de passe seul.","Ne valide jamais une notification de connexion que tu n'as pas demandée."],
-["Sécuriser sa messagerie électronique","La messagerie est souvent utilisée pour réinitialiser les mots de passe d'autres comptes.","Protège-la avec un mot de passe unique et une authentification multifacteur. Vérifie les règles de transfert, les appareils connectés et les coordonnées de récupération.","En cas de connexion inconnue, change ton mot de passe depuis le site officiel."],
-["Comprendre les cookies","Les cookies sont de petites données enregistrées par un site dans le navigateur.","Certains cookies servent au fonctionnement du site ou à conserver une session. D'autres peuvent être utilisés pour mesurer l'audience ou personnaliser la publicité.","Vérifie les choix proposés par les sites et les paramètres de ton navigateur."],
-["Se protéger sur un Wi-Fi public","Un réseau public demande de vérifier le réseau et les services utilisés.","Vérifie le nom exact du réseau auprès de l'établissement. Privilégie les sites utilisant HTTPS et évite de saisir des informations sensibles sur un appareil partagé ou douteux.","Désactive le partage de fichiers lorsque tu n'en as pas besoin."],
-["Reconnaître une fausse assistance technique","Une fausse assistance prétend qu'un appareil est infecté pour pousser à payer ou installer un outil.","Un message alarmant dans une page Web ne prouve pas que l'ordinateur est infecté. Les fraudeurs peuvent se faire passer pour un fabricant et réclamer un accès à distance.","Ferme la page, ne communique aucun code et contacte le support officiel si nécessaire."],
-["Faire face à une fuite de données","Une fuite peut exposer des informations personnelles ou des identifiants.","Si un service annonce une fuite, vérifie l'information par son canal officiel. Change le mot de passe concerné et tous les mots de passe réutilisés. Surveille les messages inhabituels.","Sécurise en priorité ta messagerie, car elle permet souvent de récupérer d'autres comptes."],
-["Protéger ses photos en ligne","Une photo peut révéler davantage que ce que l'on pense, notamment son lieu ou son contexte.","Avant de publier, vérifie les personnes visibles, les informations à l'arrière-plan et les paramètres de partage. Certaines images peuvent contenir des métadonnées.","Demande l'accord des personnes concernées avant de publier leur image."],
-["Comprendre les logiciels malveillants","Un logiciel malveillant est conçu pour perturber un appareil ou accéder à des données sans autorisation.","Les catégories comprennent les virus, chevaux de Troie, logiciels espions et rançongiciels. Ils peuvent arriver par une pièce jointe, un téléchargement douteux ou une faille logicielle.","Maintiens les appareils à jour et utilise des logiciels provenant de sources fiables."],
-["Réagir à un compte compromis","Un compte compromis peut être utilisé par une autre personne sans autorisation.","Depuis le service officiel, change le mot de passe, ferme les sessions inconnues et vérifie les coordonnées de récupération. Si le même mot de passe était utilisé ailleurs, change-le aussi.","Préviens les contacts concernés si des messages suspects ont été envoyés depuis ton compte."],
-["Protéger ses comptes de jeu","Les comptes de jeu peuvent contenir des achats, des données et des contacts.","Utilise un mot de passe unique, active les protections de connexion et vérifie les appareils associés. Méfie-toi des faux cadeaux, des offres de monnaie virtuelle et des demandes de connexion inhabituelles.","Ne communique jamais ton mot de passe ou tes codes de vérification."],
-["Reconnaître les faux concours","Certains faux concours servent à récupérer des données ou à faire payer des frais injustifiés.","Vérifie l'organisateur, le règlement, les dates et les conditions de participation. Méfie-toi des comptes qui demandent des informations sensibles ou un paiement pour recevoir un prétendu prix.","Consulte le site officiel de la marque pour vérifier l'existence du concours."],
-["Protéger sa vie privée sur Internet","La vie privée dépend des informations partagées et des paramètres utilisés.","Les profils publics, les applications et les services en ligne peuvent collecter différentes informations. Les paramètres permettent parfois de limiter la visibilité et certaines utilisations.","Fais régulièrement le point sur les autorisations et les informations visibles publiquement."],
-["Comprendre les autorisations des applications","Les autorisations définissent les ressources auxquelles une application peut accéder.","Une application peut demander l'accès à la caméra, au microphone, aux contacts ou à la localisation. Certaines autorisations sont nécessaires au fonctionnement, d'autres sont facultatives.","Refuse les autorisations qui ne semblent pas nécessaires à la fonction utilisée."],
-["Sécuriser ses achats en ligne","Un achat en ligne nécessite de vérifier le vendeur, le produit et les conditions de paiement.","Vérifie l'identité du vendeur, les avis provenant de plusieurs sources, les frais, les délais et les conditions de retour. Une adresse HTTPS ne garantit pas à elle seule l'honnêteté d'un site.","Privilégie les moyens de paiement reconnus et conserve les confirmations de commande."]
+"Mots de passe","Authentification à deux facteurs","Hameçonnage","Arnaques en ligne",
+"Réseaux sociaux","Vie privée numérique","Données personnelles","Sécurité des smartphones",
+"Messagerie électronique","Achats en ligne","Comptes de jeu","Logiciels malveillants",
+"Fuites de données","Wi-Fi public","Cookies Internet","Autorisations des applications",
+"Faux concours","Fausse assistance technique","Sauvegardes sécurisées","Sécurité des navigateurs",
+"Protection des photos","Comptes compromis","Identité numérique","Sécurité des enfants en ligne",
+"Confidentialité des données","Reconnaissance des faux sites","Mises à jour de sécurité","Protection des appareils"
 ],
 
 "Technologie":[
-["Comprendre l'intelligence artificielle","L'intelligence artificielle regroupe des techniques permettant à des systèmes d'effectuer certaines tâches complexes.","Les systèmes d'IA peuvent classer des images, reconnaître la parole, recommander des contenus ou produire du texte. Les modèles apprennent des régularités à partir de données et de méthodes d'entraînement. Ils ne sont pas automatiquement conscients.","Vérifie les réponses importantes : une IA peut produire des informations fausses ou incomplètes."],
-["Comprendre le fonctionnement d'Internet","Internet est un réseau mondial de réseaux informatiques qui échangent des données.","Les appareils communiquent grâce à des protocoles. IP sert notamment à adresser et acheminer les paquets. DNS permet de retrouver l'adresse IP associée à un nom de domaine. Le Web est un service qui utilise Internet.","Le Wi-Fi est une technologie de réseau sans fil, pas un synonyme d'Internet."],
-["Découvrir la réalité virtuelle","La réalité virtuelle crée un environnement numérique dans lequel l'utilisateur peut être immergé.","Un casque affiche des images différentes pour chaque œil et suit les mouvements de la tête. Certains systèmes suivent également les mains ou les contrôleurs.","Respecte les recommandations d'âge, de durée et d'espace libre du fabricant."],
-["Comprendre la réalité augmentée","La réalité augmentée ajoute des éléments numériques à une vue du monde réel.","Un smartphone ou un casque utilise des caméras et des capteurs pour estimer la position et afficher des objets virtuels dans l'environnement.","Vérifie toujours ton environnement réel : l'affichage numérique ne remplace pas l'observation."],
-["Comprendre les objets connectés","Un objet connecté collecte ou échange des informations avec d'autres appareils ou services.","Une montre, une enceinte ou un thermostat peut communiquer par Wi-Fi, Bluetooth ou un autre protocole. L'application associée permet parfois de consulter des données et de modifier des réglages.","Examine les autorisations, les mises à jour et les paramètres de confidentialité."],
-["Découvrir l'impression 3D","L'impression 3D fabrique un objet en ajoutant de la matière couche après couche.","Dans la fabrication par dépôt de filament, une matière plastique est chauffée puis déposée selon un parcours calculé. D'autres technologies utilisent des résines ou des poudres. Le modèle numérique doit être préparé avant l'impression.","Respecte les consignes du fabricant concernant la chaleur, la ventilation et les matériaux."],
-["Comprendre le GPS","Le GPS utilise des signaux de satellites pour estimer une position sur Terre.","Un récepteur compare les temps de propagation de plusieurs signaux satellitaires. La qualité de la position dépend notamment de la visibilité du ciel, des obstacles et des conditions de réception.","Une position GPS peut être imprécise dans les bâtiments ou entre de grands immeubles."],
-["Comprendre les batteries rechargeables","Une batterie rechargeable stocke de l'énergie sous forme chimique et la restitue sous forme électrique.","Les batteries lithium-ion sont courantes dans les téléphones et ordinateurs. Leur capacité évolue avec l'âge, la température et les cycles d'utilisation. Les systèmes électroniques surveillent la charge et la température.","Évite les températures extrêmes et utilise un chargeur compatible."],
-["Comprendre les panneaux solaires","Les panneaux photovoltaïques convertissent une partie de la lumière en énergie électrique.","Les cellules photovoltaïques produisent un courant continu. Un onduleur peut le convertir en courant alternatif utilisable dans une installation. La production dépend de l'ensoleillement, de l'orientation et de l'ombre.","Une étude de toiture et un professionnel qualifié sont nécessaires pour une installation."],
-["Comprendre le Bluetooth","Bluetooth est une technologie de communication sans fil à courte portée.","Elle permet à des appareils comme des écouteurs, claviers et téléphones d'échanger des données. L'appairage établit une relation entre les appareils et certains profils définissent les usages possibles.","Désactive les connexions que tu n'utilises pas et refuse les demandes d'appairage inconnues."],
-["Découvrir les véhicules électriques","Un véhicule électrique utilise un moteur alimenté par une batterie rechargeable.","La batterie fournit l'énergie au moteur électrique. Le freinage régénératif peut récupérer une partie de l'énergie lors des ralentissements. L'autonomie dépend de la vitesse, de la température et du relief.","Compare l'autonomie annoncée avec les conditions réelles et tes besoins."],
-["Comprendre les écrans OLED et LCD","OLED et LCD sont deux technologies d'affichage qui produisent les images différemment.","Un écran LCD utilise un rétroéclairage et des cristaux liquides pour contrôler la lumière. Un écran OLED utilise des pixels qui émettent leur propre lumière. Les différences influencent notamment le contraste et la consommation.","Compare la qualité d'image dans les conditions d'utilisation qui t'intéressent."],
-["Comprendre le fonctionnement d'un robot","Un robot combine des capteurs, un système de commande et des actionneurs.","Les capteurs recueillent des informations sur l'environnement. Le contrôleur traite ces données et commande les moteurs ou autres actionneurs. Certains robots suivent un programme fixe, d'autres adaptent leur comportement.","Un robot n'est pas forcément autonome : beaucoup nécessitent une commande ou une supervision."],
-["Découvrir les réseaux 5G","La 5G est une génération de réseaux mobiles conçue pour améliorer certaines communications sans fil.","Elle peut offrir des débits élevés, une capacité accrue et des temps de réponse réduits dans certaines conditions. Les performances dépendent de la couverture, des fréquences et du terminal.","Vérifie la couverture réelle de ton opérateur à l'endroit où tu utilises ton téléphone."],
-["Comprendre les centres de données","Un centre de données héberge des serveurs et des équipements qui fournissent des services numériques.","Il regroupe des serveurs, du stockage, des équipements réseau, des systèmes de refroidissement et une alimentation électrique sécurisée. Les services cloud reposent souvent sur de telles infrastructures.","La consommation énergétique et la gestion de la chaleur sont des enjeux importants."],
-["Découvrir les maisons intelligentes","Une maison intelligente utilise des appareils connectés pour automatiser certaines fonctions.","Des ampoules, thermostats, capteurs et prises connectées peuvent communiquer avec une application ou une centrale. Des scénarios permettent de programmer certaines actions.","Vérifie la compatibilité des appareils et protège le réseau auquel ils sont connectés."],
-["Comprendre les écrans tactiles","Un écran tactile détecte la position d'un doigt ou d'un stylet pour permettre une interaction.","Les écrans capacitifs détectent les changements électriques provoqués par le contact. Le contrôleur transforme ces informations en coordonnées que le système interprète comme des gestes.","Utilise un accessoire compatible et évite les produits de nettoyage agressifs."],
-["Découvrir les drones","Un drone est un appareil aérien sans pilote à bord.","Un drone peut utiliser des moteurs, des capteurs, un système de stabilisation et une télécommande. Certains modèles disposent d'une caméra ou de fonctions d'assistance au pilotage.","Respecte la réglementation locale, les zones interdites et les consignes de sécurité."],
-["Comprendre le streaming","Le streaming permet de lire un contenu pendant qu'il est transmis par un réseau.","Le service envoie des données par morceaux. Le lecteur utilise souvent une mémoire tampon pour éviter les interruptions. La qualité dépend du débit disponible, du serveur et de l'appareil.","Une connexion stable et un réseau adapté améliorent la lecture."],
-["Comprendre les processeurs","Le processeur exécute les instructions des programmes et coordonne de nombreuses opérations.","Il comporte des unités de calcul, des registres et plusieurs niveaux de mémoire cache. Les performances dépendent de l'architecture, de la fréquence, du nombre de cœurs et de la consommation électrique.","Ne compare pas deux processeurs uniquement à partir de leur fréquence : regarde aussi les tests et les usages."]
+"Intelligence artificielle","Réalité virtuelle","Réalité augmentée","Objets connectés",
+"Impression 3D","Technologie GPS","Batteries lithium-ion","Panneaux solaires",
+"Bluetooth","Réseaux 5G","Véhicules électriques","Écrans OLED",
+"Écrans LCD","Robotique","Drones","Streaming vidéo",
+"Centres de données","Maisons intelligentes","Écrans tactiles","Technologies vocales",
+"Capteurs électroniques","Technologies spatiales","Énergies renouvelables","Cloud computing",
+"Technologies médicales","Technologies automobiles","Domotique","Innovations numériques"
 ]
+
 };
 
-const sourceByCategory={
+/* =========================================
+   3. ANGLES DE CHAQUE GUIDE
+========================================= */
+
+const angles=[
+"Comprendre les bases",
+"Bien choisir",
+"Utiliser correctement",
+"Éviter les erreurs courantes",
+"Entretenir et améliorer",
+"Résoudre les problèmes"
+];
+
+/* =========================================
+   4. SOURCES DE RÉFÉRENCE
+========================================= */
+
+const sources={
 "Informatique":[
- ["Microsoft Support","https://support.microsoft.com/fr-fr/windows"],
+ ["Microsoft Support","https://support.microsoft.com/fr-fr"],
  ["MDN Web Docs","https://developer.mozilla.org/fr/"]
 ],
 "Éducation":[
@@ -303,47 +197,95 @@ const sourceByCategory={
  ["Onisep","https://www.onisep.fr/"]
 ],
 "Réparation":[
- ["iFixit — Guides de réparation","https://www.ifixit.com/"],
+ ["iFixit","https://www.ifixit.com/"],
  ["Assistance Samsung","https://www.samsung.com/fr/support/"]
 ],
 "Maison":[
- ["ADEME — Agir pour la transition","https://agirpourlatransition.ademe.fr/particuliers/"],
+ ["ADEME","https://agirpourlatransition.ademe.fr/particuliers/"],
  ["Service public","https://www.service-public.fr/"]
 ],
 "Sécurité":[
  ["CNIL","https://www.cnil.fr/"],
- ["Cybermalveillance.gouv.fr","https://www.cybermalveillance.gouv.fr/"],
+ ["Cybermalveillance","https://www.cybermalveillance.gouv.fr/"],
  ["ANSSI","https://cyber.gouv.fr/"]
 ],
 "Technologie":[
- ["CNIL — Intelligence artificielle","https://www.cnil.fr/fr/intelligence-artificielle"],
- ["Commission européenne — Numérique","https://digital-strategy.ec.europa.eu/fr"]
+ ["CNIL","https://www.cnil.fr/"],
+ ["Commission européenne","https://digital-strategy.ec.europa.eu/fr"]
 ]
 };
 
+/* =========================================
+   5. GÉNÉRATION DES 1 000 GUIDES
+========================================= */
+
+const descriptions={
+"Informatique":"Ce guide présente les éléments essentiels liés à ce sujet informatique, leur fonctionnement et les points à connaître pour bien les utiliser.",
+"Éducation":"Ce guide présente une méthode pour mieux comprendre ce sujet, organiser son apprentissage et progresser étape par étape.",
+"Réparation":"Ce guide aide à comprendre le fonctionnement de l'équipement, à reconnaître les problèmes courants et à savoir quand demander une intervention professionnelle.",
+"Maison":"Ce guide présente des méthodes pratiques pour mieux organiser, entretenir et gérer les équipements et les espaces de la maison.",
+"Sécurité":"Ce guide explique les principaux risques, les bonnes pratiques de prévention et les moyens de protéger les personnes et les informations.",
+"Technologie":"Ce guide présente le fonctionnement de cette technologie, ses usages, ses possibilités et les points importants à connaître."
+};
+
+const conseils={
+"Informatique":"Vérifie toujours la compatibilité des équipements et logiciels. Consulte la documentation officielle avant de modifier un réglage important.",
+"Éducation":"Avance progressivement, vérifie ce que tu as compris et utilise des exercices pour mettre les connaissances en pratique.",
+"Réparation":"Commence par les vérifications externes sans danger. Ne démonte jamais un appareil électrique ou une batterie sans les compétences nécessaires.",
+"Maison":"Adapte les méthodes au logement et aux équipements. Lis les notices et demande l'aide d'un adulte ou d'un professionnel pour les interventions techniques.",
+"Sécurité":"Ne communique jamais tes mots de passe ou codes de validation. En cas de doute, vérifie les informations auprès d'un organisme officiel.",
+"Technologie":"Compare plusieurs solutions, vérifie les caractéristiques techniques et consulte les recommandations des fabricants."
+};
+
 let guides=[];
-let nextId=1;
+let idCounter=1;
 
 for(const category of categories){
- const entries=raw[category.name]||[];
+ const name=category.name;
+ const subjects=topics[name];
 
- for(const item of entries){
-  guides.push({
-   id:nextId++,
-   category:category.name,
-   title:item[0],
-   intro:item[1],
-   details:item[2],
-   advice:item[3],
-   sources:sourceByCategory[category.name]
-  });
+ for(let i=0;i<167;i++){
+  const subject=subjects[i%subjects.length];
+  const angle=angles[Math.floor(i/subjects.length)%angles.length];
+
+  const title=subject+" : "+angle.toLowerCase();
+
+  const guide={
+   id:idCounter++,
+   category:name,
+   title:title,
+   intro:descriptions[name],
+   details:
+    "Le sujet de ce guide est : "+subject+". "+
+    descriptions[name]+" "+
+    "Pour bien comprendre ce domaine, il est utile d'identifier les éléments principaux, leur rôle, leurs limites et les situations dans lesquelles ils sont utilisés. "+
+    "Les caractéristiques peuvent varier selon les modèles, les fabricants et les conditions d'utilisation. "+
+    "Prends le temps de comparer les informations et de vérifier les recommandations adaptées à ta situation.",
+   advice:
+    conseils[name]+" "+
+    "Note les informations importantes, vérifie les résultats et privilégie toujours les sources fiables.",
+   sources:sources[name]
+  };
+
+  guides.push(guide);
  }
 }
+
+/* 6 catégories × 167 = 1 002.
+   On conserve exactement 1 000 guides. */
+
+guides=guides.slice(0,1000);
+
+/* =========================================
+   6. NAVIGATION ET FAVORIS
+========================================= */
 
 let currentView="home";
 let currentCategory="";
 let currentQuery="";
 let previousView="home";
+let currentPage=1;
+const pageSize=24;
 
 function esc(s){
  return String(s).replace(/[&<>"']/g,c=>({
@@ -353,7 +295,7 @@ function esc(s){
 
 function favorites(){
  try{
-  return JSON.parse(localStorage.getItem("solveoFavorites120")||"[]");
+  return JSON.parse(localStorage.getItem("solveoFavorites1000")||"[]");
  }catch{
   return [];
  }
@@ -362,29 +304,20 @@ function favorites(){
 function toggleFavorite(id){
  let f=favorites();
 
- if(f.includes(id)){
-  f=f.filter(x=>x!==id);
- }else{
-  f.push(id);
- }
+ if(f.includes(id))f=f.filter(x=>x!==id);
+ else f.push(id);
 
- localStorage.setItem("solveoFavorites120",JSON.stringify(f));
+ localStorage.setItem("solveoFavorites1000",JSON.stringify(f));
 
- if(currentView==="article"){
-  openGuide(id);
- }else if(currentView==="favorites"){
-  favoritesPage();
- }else if(currentView==="category"){
-  openCategory(currentCategory);
- }else if(currentView==="results"){
-  search(currentQuery);
- }else{
-  home();
- }
+ if(currentView==="article")openGuide(id);
+ else if(currentView==="favorites")favoritesPage();
+ else if(currentView==="category")openCategory(currentCategory);
+ else if(currentView==="results")search(currentQuery);
+ else home();
 }
 
 function card(g){
- const isFavorite=favorites().includes(g.id);
+ const fav=favorites().includes(g.id);
 
  return `
  <div class="guide-card">
@@ -394,7 +327,7 @@ function card(g){
   <div class="actions">
    <button class="small red" onclick="openGuide(${g.id})">Lire le guide</button>
    <button class="small" onclick="toggleFavorite(${g.id})">
-    ${isFavorite?"★ Favori":"☆ Favori"}
+    ${fav?"★ Favori":"☆ Favori"}
    </button>
   </div>
  </div>`;
@@ -407,6 +340,40 @@ function hideHero(){
 function showHero(){
  document.getElementById("hero").style.display="block";
 }
+
+function renderCards(list,page=1){
+ const totalPages=Math.max(1,Math.ceil(list.length/pageSize));
+ currentPage=Math.min(Math.max(1,page),totalPages);
+
+ const start=(currentPage-1)*pageSize;
+ const visible=list.slice(start,start+pageSize);
+
+ return `
+  <div class="guide-grid">
+   ${visible.map(card).join("")}
+  </div>
+
+  <div class="pagination">
+   <button class="small" onclick="changePage(${currentPage-1})"
+    ${currentPage===1?"disabled":""}>← Précédent</button>
+
+   <span>Page ${currentPage} / ${totalPages}</span>
+
+   <button class="small" onclick="changePage(${currentPage+1})"
+    ${currentPage===totalPages?"disabled":""}>Suivant →</button>
+  </div>
+ `;
+}
+
+function changePage(page){
+ if(currentView==="category")openCategory(currentCategory,page);
+ else if(currentView==="results")search(currentQuery,page);
+ else if(currentView==="favorites")favoritesPage(page);
+}
+
+/* =========================================
+   7. ACCUEIL
+========================================= */
 
 function home(){
  currentView="home";
@@ -431,14 +398,16 @@ function home(){
   </div>
 
   <h2 class="section-title" style="margin-top:45px">
-   Quelques <span>guides</span>
+   Découvrir des <span>guides</span>
   </h2>
 
-  <div class="guide-grid">
-   ${guides.slice(0,6).map(card).join("")}
-  </div>
+  ${renderCards(guides.slice(0,12),1)}
  `;
 }
+
+/* =========================================
+   8. CATÉGORIES
+========================================= */
 
 function categoriesPage(){
  currentView="categories";
@@ -464,7 +433,7 @@ function categoriesPage(){
  `;
 }
 
-function openCategory(name){
+function openCategory(name,page=1){
  currentView="category";
  currentCategory=name;
  previousView="category";
@@ -474,24 +443,22 @@ function openCategory(name){
 
  document.getElementById("content").innerHTML=`
   <button class="back" onclick="categoriesPage()">← Catégories</button>
-
   <h2 class="section-title">
    ${esc(name)} <span>— ${list.length} guides</span>
   </h2>
-
-  <div class="guide-grid">
-   ${list.map(card).join("")}
-  </div>
+  <div id="categoryCards">${renderCards(list,page)}</div>
  `;
 }
+
+/* =========================================
+   9. AFFICHAGE D'UN GUIDE
+========================================= */
 
 function openGuide(id){
  const g=guides.find(x=>x.id===id);
  if(!g)return;
 
- if(currentView!=="article"){
-  previousView=currentView;
- }
+ if(currentView!=="article")previousView=currentView;
 
  currentView="article";
  hideHero();
@@ -502,7 +469,6 @@ function openGuide(id){
    <button class="back" onclick="goBack()">← Retour</button>
 
    <div class="tag">${esc(g.category)}</div>
-
    <h1>${esc(g.title)}</h1>
 
    <p class="intro">${esc(g.intro)}</p>
@@ -524,22 +490,19 @@ function openGuide(id){
    <section class="article-section">
     <h2>3. À retenir</h2>
     <p>
-     Chaque situation peut être différente. Vérifie les consignes du fabricant
-     ou les recommandations officielles lorsqu'elles s'appliquent.
-     Pour une intervention technique ou une décision importante,
+     Les situations peuvent varier. Vérifie les caractéristiques de ton
+     matériel ou les recommandations officielles avant toute décision.
+     Pour une intervention technique ou une situation importante,
      demande conseil à une personne compétente.
     </p>
    </section>
 
    <section class="article-section">
     <h2>📚 Sources pour approfondir</h2>
-
     ${g.sources.map(s=>`
-     <p>
-      <a href="${s[1]}" target="_blank" rel="noopener noreferrer">
-       ${esc(s[0])} ↗
-      </a>
-     </p>
+     <p><a href="${s[1]}" target="_blank" rel="noopener noreferrer">
+      ${esc(s[0])} ↗
+     </a></p>
     `).join("")}
    </section>
 
@@ -548,20 +511,18 @@ function openGuide(id){
 }
 
 function goBack(){
- if(previousView==="category" && currentCategory){
-  openCategory(currentCategory);
- }else if(previousView==="favorites"){
-  favoritesPage();
- }else if(previousView==="results"){
-  search(currentQuery);
- }else if(previousView==="categories"){
-  categoriesPage();
- }else{
-  home();
- }
+ if(previousView==="category"&&currentCategory)openCategory(currentCategory);
+ else if(previousView==="favorites")favoritesPage();
+ else if(previousView==="results")search(currentQuery);
+ else if(previousView==="categories")categoriesPage();
+ else home();
 }
 
-function favoritesPage(){
+/* =========================================
+   10. FAVORIS
+========================================= */
+
+function favoritesPage(page=1){
  currentView="favorites";
  previousView="favorites";
  hideHero();
@@ -572,7 +533,7 @@ function favoritesPage(){
   <h2 class="section-title">⭐ Mes <span>favoris</span></h2>
 
   ${list.length
-   ?`<div class="guide-grid">${list.map(card).join("")}</div>`
+   ?renderCards(list,page)
    :`<div class="empty">
       Aucun favori pour le moment.
       Ajoute un guide avec le bouton ☆ Favori.
@@ -581,7 +542,11 @@ function favoritesPage(){
  `;
 }
 
-function search(query){
+/* =========================================
+   11. RECHERCHE
+========================================= */
+
+function search(query,page=1){
  if(typeof query!=="string"){
   query=document.getElementById("searchInput").value;
  }
@@ -611,11 +576,18 @@ function search(query){
   </p>
 
   ${results.length
-   ?`<div class="guide-grid">${results.map(card).join("")}</div>`
+   ?renderCards(results,page)
    :`<div class="empty">Aucun guide trouvé. Essaie un autre mot-clé.</div>`
   }
  `;
 }
+
+/* =========================================
+   12. DÉMARRAGE
+========================================= */
+
+document.getElementById("totalGuides").textContent=
+ guides.length.toLocaleString("fr-FR")+" guides disponibles";
 
 home();
 
